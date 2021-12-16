@@ -56,7 +56,7 @@ function App() {
 
   return (
     <div className='container'>
-      <Header onAdd={()=> setShow(!show)}/>
+      <Header onAdd={()=> setShow(!show)} show={show}/>
       {show && <AddTask
         onAdd={addTask}
       />}

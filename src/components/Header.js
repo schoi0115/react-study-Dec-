@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Button from './Button'
 
 
-const Header = ({ title, onAdd }) => {
+const Header = ({ title, onAdd, show }) => {
     // const name = 'Shawn'
     // const x = true
     const onClick = () => {
@@ -16,7 +16,7 @@ const Header = ({ title, onAdd }) => {
             {/* <h1 style={{color: 'red', backgroundColor: 'black'}}>{title}</h1> - Styling medthod 1 */}
             {/* <h1 style={headingStyle}>{title}</h1> - Styling Method 2 */}
             <h1>{title}</h1>
-            <Button onClick={onAdd} color='green' text='add' />
+            <Button onClick={onAdd} color={show ? 'red' : 'green'} text={show ? 'close' : 'add'} />
             {/* <Button color='blue' text='delete' />
             <Button color='red' text='edit' /> */}
 
