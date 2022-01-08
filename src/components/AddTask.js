@@ -7,7 +7,7 @@ const AddTask = ({ onAdd }) => {
     const [day, setDay] = useState('')
     const [reminder, setReminder] = useState(false)
 
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(null);
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -33,13 +33,25 @@ const AddTask = ({ onAdd }) => {
             </div>
             <div className='form-control'>
                 <label>Day & Time: </label>
-                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} value={day}/>
-                {/* <input
+                <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    value={day}
+                    dateFormat='MM/dd/yyyy'
+                    isClearable
+                    showYearDropdown
+                    scrollableYearDropdown
+                    scrollableMonthYearDropdown
+
+                />
+                <input
                     type='text'
+                    id='DatePicker'
                     placeholder='Add Day & Time'
                     value={day}
                     onChange={(e) => setDay(e.target.value)}
-                /> */}
+
+                />
             </div>
             <div className='form-control form-control-check'>
                 <label>Set Reminder </label>
